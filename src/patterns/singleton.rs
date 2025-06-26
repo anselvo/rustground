@@ -16,6 +16,7 @@ pub struct Singleton {
 
 impl Singleton {
     pub fn get_instance() -> &'static Singleton {
+        #![allow(static_mut_refs)]
         static mut SINGLETON: MaybeUninit<Singleton> = MaybeUninit::uninit();
         static ONCE: Once = Once::new();
 
@@ -25,7 +26,7 @@ impl Singleton {
                 let singleton = Singleton {
                     instance: Mutex::new(Vec::new()),
                 };
-                // Store it to the static var, i.e. initialize it
+                // Store it to the static var, i.e., initialize it
                 SINGLETON.write(singleton);
             });
 
