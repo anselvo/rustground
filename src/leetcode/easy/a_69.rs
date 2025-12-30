@@ -3,18 +3,17 @@ pub fn my_sqrt(x: i32) -> i32 {
     if x == 1 { return 1; }
     let (mut l, mut r) = (0, x);
 
-
     while l < r {
         let half = (l + r) / 2;
-        println!("{} {} {}", half, l, r);
-        if x as i64 <= half as i64 * half as i64 {
+        let sqrt = (half as i64) * (half as i64);
+        if (x as i64) < sqrt {
             r = half;
         } else {
             l = half + 1;
         }
     }
-
-    l
+    println!("l: {}, r: {}", l, r);
+    l-1
 }
 
 pub fn my_sqrt_bruteforce(x: i32) -> i32 {
@@ -34,9 +33,9 @@ mod tests {
 
     #[test]
     fn test() {
-        // assert_eq!(my_sqrt(0), 0);
-        // assert_eq!(my_sqrt(1), 1);
-        // assert_eq!(my_sqrt(4), 2);
+        assert_eq!(my_sqrt(0), 0);
+        assert_eq!(my_sqrt(1), 1);
+        assert_eq!(my_sqrt(4), 2);
         assert_eq!(my_sqrt(8), 2);
         assert_eq!(my_sqrt(9), 3);
         assert_eq!(my_sqrt(25), 5);
