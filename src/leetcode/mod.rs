@@ -17,6 +17,13 @@ pub mod easy {
     pub mod a_3110;
 }
 
+pub mod medium {
+    pub mod a_33;
+}
+
+pub mod hard {
+    pub mod a_4;
+}
 
 /* TEMPLATE */
 pub fn task_name() -> String {
