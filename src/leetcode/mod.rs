@@ -15,6 +15,7 @@ pub mod easy {
     pub mod a_70;
     pub mod a_222;
     pub mod a_3110;
+    pub mod a_94;
 }
 
 pub mod medium {
