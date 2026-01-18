@@ -28,7 +28,7 @@ pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
 }
 
 #[test]
-fn test_bfs() {
+fn test() {
     let one = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: None,
