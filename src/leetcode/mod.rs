@@ -24,6 +24,7 @@ pub mod medium {
     pub mod a_34;
     pub mod a_74;
     pub mod a_81;
+    pub mod a_79;
 }
 
 pub mod hard {
