@@ -1,34 +1,46 @@
-pub mod easy {
-    pub mod a_9;
-    pub mod a_13;
-    pub mod a_14;
-    pub mod a_20;
-    pub mod a_21;
-    pub mod a_26;
-    pub mod a_27;
-    pub mod a_28;
-    pub mod a_35;
-    pub mod a_58;
-    pub mod a_66;
-    pub mod a_67;
-    pub mod a_69;
-    pub mod a_70;
-    pub mod a_222;
-    pub mod a_3110;
-    pub mod a_94;
-    pub mod a_100;
+pub mod binary_search {
+    pub mod e_35;
+    pub mod e_69;
+    pub mod m_33;
+    pub mod m_34;
+    pub mod m_74;
+    pub mod m_81;
+    pub mod h_4;
 }
 
-pub mod medium {
-    pub mod a_33;
-    pub mod a_34;
-    pub mod a_74;
-    pub mod a_81;
-    pub mod a_79;
+pub mod bfs {
+    pub mod e_222;
 }
 
-pub mod hard {
-    pub mod a_4;
+pub mod dfs {
+    pub mod e_94;
+    pub mod e_100;
+    pub mod m_79;
+}
+
+pub mod dp {
+    pub mod e_70;
+}
+
+pub mod math {
+    pub mod e_9;
+    pub mod e_13;
+    pub mod e_66;
+    pub mod e_67;
+    pub mod e_3110;
+}
+
+pub mod string {
+    pub mod e_14;
+    pub mod e_20;
+    pub mod e_21;
+    pub mod e_26;
+    pub mod e_28;
+    pub mod e_58;
+}
+
+pub mod x {
+    pub mod e_27;
 }
 
 /* TEMPLATE */

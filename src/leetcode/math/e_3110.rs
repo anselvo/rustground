@@ -6,7 +6,7 @@ pub fn score_of_string(s: String) -> i32 {
         let right = chars[i];
         count += left.abs_diff(right) as i32
     }
-    return count
+    count
 }
 
 #[cfg(test)]

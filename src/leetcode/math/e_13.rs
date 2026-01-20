@@ -1,6 +1,5 @@
 use std::collections::HashMap;
 
-
 pub fn roman_to_int(s: String) -> i32 {
     let digits: HashMap<char, i32> = HashMap::from([
         ('I', 1),
@@ -23,8 +22,7 @@ pub fn roman_to_int(s: String) -> i32 {
         }
     }
     ans += digits[&chars[chars.len() - 1]];
-
-    return ans;
+    ans
 }
 
 #[cfg(test)]
