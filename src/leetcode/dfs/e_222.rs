@@ -19,23 +19,11 @@ impl TreeNode {
     }
 }
 
-pub fn count_nodes_bfs(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    let mut count = 0;
-    let mut stack = Vec::new();
-    if let Some(r) = root {
-        stack.push(r);
-    }
-    while let Some(node_rc) = stack.pop() {
-        count += 1;
-        let node = node_rc.borrow();
-        if let Some(right) = node.right.clone() {
-            stack.push(right);
-        }
-        if let Some(left) = node.left.clone() {
-            stack.push(left);
-        }
-    }
-    count
+pub fn count_nodes_dfs(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+    if root.is_none() { return 0; }
+    let rc_node = root.clone().unwrap();
+    let node = rc_node.borrow();
+    1 + count_nodes_dfs(node.left.clone()) + count_nodes_dfs(node.right.clone())
 }
 
 #[cfg(test)]
@@ -43,7 +31,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_bfs() {
+    fn test_dfs() {
         let four = Some(Rc::new(RefCell::new(TreeNode {
             val: 1,
             left: Some(Rc::new(RefCell::new(TreeNode {
@@ -57,7 +45,7 @@ mod tests {
                 right: None,
             }))),
         })));
-        assert_eq!(count_nodes_bfs(four), 4);
+        assert_eq!(count_nodes_dfs(four), 4);
         let five = Some(Rc::new(RefCell::new(TreeNode {
             val: 1,
             left: Some(Rc::new(RefCell::new(TreeNode {
@@ -71,7 +59,7 @@ mod tests {
                 right: None,
             }))),
         })));
-        assert_eq!(count_nodes_bfs(five), 5);
+        assert_eq!(count_nodes_dfs(five), 5);
         let six = Some(Rc::new(RefCell::new(TreeNode {
             val: 1,
             left: Some(Rc::new(RefCell::new(TreeNode {
@@ -85,7 +73,7 @@ mod tests {
                 right: None,
             }))),
         })));
-        assert_eq!(count_nodes_bfs(six), 6);
+        assert_eq!(count_nodes_dfs(six), 6);
         let seven = Some(Rc::new(RefCell::new(TreeNode {
             val: 1,
             left: Some(Rc::new(RefCell::new(TreeNode {
@@ -99,8 +87,8 @@ mod tests {
                 right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
             }))),
         })));
-        assert_eq!(count_nodes_bfs(seven), 7);
-        assert_eq!(count_nodes_bfs(Some(Rc::new(RefCell::new(TreeNode::new(1))))), 1);
-        assert_eq!(count_nodes_bfs(None), 0);
+        assert_eq!(count_nodes_dfs(seven), 7);
+        assert_eq!(count_nodes_dfs(Some(Rc::new(RefCell::new(TreeNode::new(1))))), 1);
+        assert_eq!(count_nodes_dfs(None), 0);
     }
 }
