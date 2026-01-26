@@ -46,6 +46,7 @@ pub mod string {
     pub mod e_26;
     pub mod e_28;
     pub mod e_58;
+    pub mod m_187;
 }
 
 pub mod x {
