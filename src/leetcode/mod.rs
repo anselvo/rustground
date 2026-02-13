@@ -1,3 +1,5 @@
+use std::fmt::Debug;
+
 pub mod binary_search {
     pub mod e_35;
     pub mod e_69;
@@ -29,6 +31,7 @@ pub mod dfs {
 
 pub mod dp {
     pub mod e_70;
+    pub mod m_718;
 }
 
 pub mod math {
@@ -65,5 +68,23 @@ mod tests {
     #[test]
     fn test() {
         assert_eq!(task_name(), "".to_string());
+    }
+}
+
+/* UTILS */
+
+fn print_2d_vec<T : Debug>(vec: Vec<Vec<T>>) {
+    println!();
+    print!("  ");
+    for j in 0..vec[0].len() {
+        print!("{} ", j);
+    }
+    println!();
+    for i in 0..vec.len() {
+        print!("{} ", i);
+        for j in 0..vec[i].len() {
+            print!("{:?} ", vec[i][j]);
+        }
+        println!();
     }
 }
