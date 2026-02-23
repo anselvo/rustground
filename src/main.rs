@@ -1,5 +1,5 @@
 use chat::server::Server;
-use playground::{algorithms, structures};
+use rustground::{algorithms, structures};
 use crate::chat::client::ClientManual;
 
 mod chat;
