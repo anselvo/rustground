@@ -13,9 +13,9 @@ pub fn count_prefix_suffix_pairs(words: Vec<String>) -> i32 {
 
 fn is_prefix_and_suffix(w1: &String, w2: &String) -> bool {
     if w1.len() > w2.len() { return false }
-    let h1: i32 = w1.bytes().map(|b| b as i32).enumerate().fold(0, |acc, (i, b)| acc * 31 + b);
-    let suf: i32 = w2[..w1.len()].bytes().map(|b| b as i32).enumerate().fold(0, |acc,  (i, b)| acc * 31 + b);
-    let pre: i32 = w2[w2.len()-w1.len()..].bytes().map(|b| b as i32).enumerate().fold(0, |acc,  (i, b)| acc * 31 + b);
+    let h1: i32 = w1.bytes().map(|b| b as i32).fold(0, |acc, b| acc * 31 + b);
+    let suf: i32 = w2[..w1.len()].bytes().map(|b| b as i32).fold(0, |acc,  b| acc * 31 + b);
+    let pre: i32 = w2[w2.len()-w1.len()..].bytes().map(|b| b as i32).fold(0, |acc,  b| acc * 31 + b);
     h1 == suf && h1 == pre
 }
 
