@@ -6,12 +6,12 @@ pub struct ListNode {
 
 impl ListNode {
     #[inline]
-    fn new(val: i32) -> Self {
+    pub fn new(val: i32) -> Self {
         ListNode { next: None, val }
     }
 
     #[inline]
-    fn new_node(val: i32, node: ListNode) -> Self {
+    pub fn new_node(val: i32, node: ListNode) -> Self {
         ListNode { next: Some(Box::new(node)), val }
     }
 }
@@ -20,7 +20,7 @@ pub fn merge_two_lists(list1: Option<Box<ListNode>>, list2: Option<Box<ListNode>
     let Some(mut l1) = list1 else { return list2 };
     let Some(mut l2) = list2 else { return Some(l1) };
     
-    return if l1.val < l2.val {
+    if l1.val < l2.val {
         l1.next = merge_two_lists(l1.next, Some(l2));
         Some(l1)
     } else {
