@@ -4,6 +4,7 @@ pub trait Client {
     fn run(&self, server: Server);
 }
 
+#[allow(dead_code)]
 pub struct ClientTokioSelect;
 impl Client for ClientTokioSelect {
     fn run(&self, mut server: Server) {
@@ -31,7 +32,7 @@ impl Client for ClientTokioSelect {
     }
 }
 
-
+#[allow(dead_code)]
 pub struct ClientManual;
 impl Client for ClientManual {
     fn run(&self, mut server: Server) {
