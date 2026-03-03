@@ -53,6 +53,11 @@ pub mod string {
     pub mod e_3042;
 }
 
+pub mod structure {
+    pub mod e_705;
+    pub mod e_706;
+}
+
 pub mod x {
     pub mod e_27;
 }
