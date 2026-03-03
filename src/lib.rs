@@ -11,6 +11,7 @@ pub mod patterns {
 pub mod structures {
     pub mod vector;
     pub mod queue;
+    pub mod map;
 }
 
 pub mod leetcode;
