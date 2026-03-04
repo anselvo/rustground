@@ -2,7 +2,6 @@ pub struct MyHashMap {
     array: Vec<i32>,
 }
 
-
 /**
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
@@ -32,7 +31,6 @@ impl MyHashMap {
  * let ret_2: i32 = obj.get(key);
  * obj.remove(key);
  */
-
 #[cfg(test)]
 mod tests {
     use super::*;

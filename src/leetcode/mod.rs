@@ -54,6 +54,7 @@ pub mod string {
 }
 
 pub mod structure {
+    pub mod m_307;
     pub mod e_705;
     pub mod e_706;
 }
