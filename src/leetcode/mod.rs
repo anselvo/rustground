@@ -19,6 +19,7 @@ pub mod bfs {
 }
 
 pub mod dfs {
+    pub mod e_21;
     pub mod e_94;
     pub mod e_100;
     pub mod m_79;
@@ -45,8 +46,6 @@ pub mod math {
 pub mod string {
     pub mod e_14;
     pub mod e_20;
-    pub mod e_21;
-    pub mod e_26;
     pub mod e_28;
     pub mod e_58;
     pub mod m_187;
@@ -60,6 +59,7 @@ pub mod structure {
 }
 
 pub mod x {
+    pub mod e_26;
     pub mod e_27;
 }
 
