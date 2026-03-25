@@ -23,7 +23,7 @@ pub fn is_valid(s: String) -> bool {
         }
     }
 
-    return if dp.len() == 0 { true } else { false };
+    if dp.len() == 0 { true } else { false }
 }
 
 #[cfg(test)]
